@@ -463,13 +463,14 @@ function installCompatMount(
       !isFunction(component) && !component.render && !component.template
     const emptyRender = () => {}
 
-    // create root instance
+    // @mark create root instance
     const instance = createComponentInstance(vnode, null, null)
     // suppress "missing render fn" warning since it can't be determined
     // until $mount is called
     if (hasNoRender) {
       instance.render = emptyRender
     }
+    // @mark setupComponent
     setupComponent(instance)
     vnode.component = instance
     vnode.isCompatRoot = true

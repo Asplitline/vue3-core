@@ -704,6 +704,7 @@ function setupStatefulComponent(
   if (__DEV__) {
     exposePropsOnRenderContext(instance)
   }
+  // @mark call setup()
   // 2. call setup()
   const { setup } = Component
   if (setup) {
